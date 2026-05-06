@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -17,7 +17,7 @@ mongoose
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Notes API is running');
 });
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
